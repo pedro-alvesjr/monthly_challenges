@@ -2,8 +2,14 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-def january(request):
-    return HttpResponse('Exercise every day.')
+def monthly_challenges(request, month):
+    challenge_text = None
+    
+    if month == 'january':
+        challenge_text = 'Eat meat every day.'
+    elif month == 'february':
+        challenge_text = 'Exercise every morning.'
+    elif month == 'march':
+        challenge_text = 'Read two books.'
 
-def february(request):
-    return HttpResponse('Read a book every day.')
+    return HttpResponse(challenge_text)
