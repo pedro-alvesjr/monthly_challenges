@@ -18,7 +18,11 @@ monthly_challenges = {
 
 def monthly_challenge_by_number(request, month):
     months = list(monthly_challenges.keys())
-    month_chosen = months[month]
+
+    if month > len(months):
+        return HttpResponseNotFound('Invalid month.')
+
+    month_chosen = months[month - 1]
     return HttpResponseRedirect('/challenges/' + month_chosen)
 
 
