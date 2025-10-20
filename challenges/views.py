@@ -23,7 +23,7 @@ def index(request):
     months = list(monthly_challenges.keys())
 
     return render(request, 'challenges/index.html', {
-        'month': months
+        'months': months
     })
 
 

@@ -8,8 +8,8 @@
 <body>
     <ul>
         {% for month in months %}
-        <li><a href='{%  url 'month_name' month %}'>{{ month|title }}</a></li>
-        {% endfor  %}
+        <li><a href="{% url 'month-challenge' month %}">{{ month|title }}</a></li>
+        {% endfor %}
     </ul>
 </body>
 </html>
